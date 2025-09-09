@@ -1,3 +1,5 @@
+import dotenv from "dotenv"
+dotenv.config({ path: "../../packages/db/.env"})
 import { prismaclient } from "db/client";
 
 Bun.serve({

@@ -50,6 +50,7 @@
       "name": "ws",
       "dependencies": {
         "db": "*",
+        "dotenv": "^17.2.2",
       },
       "devDependencies": {
         "@types/bun": "latest",
