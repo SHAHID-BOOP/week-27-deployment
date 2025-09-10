@@ -27,4 +27,4 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
           chmod 700 /home/runner/ssh_key
-          ssh -o StrictHostKeyChecking=no -i ~/ssh_key root@64.227.190.93 -t "docker stop user_backend && docker run --name user_backend -d -p 3001:3001 shahid81/todo-app-backend:${{ github.sha }}
+          ssh -o StrictHostKeyChecking=no -i ~/ssh_key root@64.227.190.93 -t "docker stop user_backend || true && docker rm user_backend || true && docker run --name user_backend -d -p 3001:3001 shahid81/todo-app-backend:${{ github.sha }}
